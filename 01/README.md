@@ -22,3 +22,6 @@ package:is a collection of module.
  Node Js is a javascript runtime built on Google's open source v8 javascript engine.
 ~
  It is all about running js outside of the browser. so Nodejs anything written in js and run outside of the browser. 
+
+ # Routing 
+ routing means implmenting different action for different url.

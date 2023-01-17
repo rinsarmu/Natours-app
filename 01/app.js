@@ -5,8 +5,22 @@ const port = '8000'
 const host = '127.0.0.1'
 
 const server = http.createServer((req, res)=>{
+    const url = req.url;
 
-    res.end("Hello romm the server ")
+    //Routing
+    if(url === '/overview' || url === '/'){
+        return res.end("Overview")
+    } 
+    else if(url==='/product'){
+        res.writeHead(200, {
+            'Content-Type': 'text/html'
+        })
+        return res.end("<h1> Product </h1>");
+    } else { 
+        res.writeHead(404); // to add status code
+
+        res.end("404 - Not found ")
+    }
 })
 
 //reading asyn data
