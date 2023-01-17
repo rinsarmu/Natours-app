@@ -1,3 +1,12 @@
+in SYnch 
+process is executed one aftert the other.
+that means waiting each other. 
+
+Asynch
+but here the process run in the background and when the running completed the callback function is called.
+
+in nodejs there is only a single thread.
+
 const fs = require('fs')
 
 //reading asyn data
