@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Natnael Insaru",
+    "id": 0,
+    "isGc" : false,
+    "department": "Computer Engineering",
+    "year": 2,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, praesentium."
+  },
+  {
+    "name": "Robera Insaru",
+    "id": 1,
+    "isGc" : false,
+
+    "department": "Software Engineering",
+    "year": 3,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, praesentium."
+  },
+  {
+    "name": "Sagni Insaru",
+    "id": 2,
+    "isGc" : true,
+
+    "department": "ELectrical Engineering",
+    "year": 5,
+    "description": "Sangi  ipsum dolor sit amet consectetur adipisicing elit. Rerum, praesentium."
+  },
+  {
+    "name": "Getacho Insaru",
+    "id": 3,
+    "isGc" : false,
+
+    "department": "Chemical Engineering",
+    "year": 3,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, praesentium."
+  },
+
+  {
+    "name": "Gemachis Kenea",
+    "id": 4,
+    "isGc" : true,
+
+    "department": "Mechanical Engineering",
+    "year": 5,
+    "description": " Gemachis kenea was Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, praesentium."
+  }
+]

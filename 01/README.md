@@ -25,3 +25,6 @@ package:is a collection of module.
 
  # Routing 
  routing means implmenting different action for different url.
+
+ # JSON
+ Is a very simple text format that looks a lot like javascript object

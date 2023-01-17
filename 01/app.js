@@ -15,8 +15,20 @@ const server = http.createServer((req, res)=>{
         res.writeHead(200, {
             'Content-Type': 'text/html'
         })
-        return res.end("<h1> Product </h1>");
-    } else { 
+        return res.end("<h1> not Product </h1>");
+    } 
+    else if(url ==='/api') {
+        fs.readFile(`${__dirname}/Data/packData.json`, 'utf-8', (err, data) =>{
+            if(!err) {
+                return res.end(data)
+            } else {
+                console.log("not file");
+            }
+        })
+   
+    }
+    
+    else { 
         res.writeHead(404); // to add status code
 
         res.end("404 - Not found ")
