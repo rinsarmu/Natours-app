@@ -8,6 +8,7 @@ const replaceTemplate = (temp, element) =>{
      output = output.replace(/{%PRICE%}/g,element.price )
      output = output.replace(/{%DESCRIPTION%}/g,element.description )
      output = output.replace(/{%PRODUCTID%}/g,element.id )
+    //  output = output.replace(/O/g,'8' )
 
 
      if(element.organic)

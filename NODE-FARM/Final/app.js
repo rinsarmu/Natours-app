@@ -1,6 +1,8 @@
 const fs = require('fs')
 const http = require('http')
 const httpUrl = require('url')
+const slugify = require('slugify')
+
 const replaceTemplate = require('./module/replaceTemplate')
 
 const port = '8000'
@@ -8,12 +10,13 @@ const host = '127.0.0.1'
 
 const data = fs.readFileSync(`${__dirname}/Data/packData.json`)
 const dataObj = JSON.parse(data)
-
+const slugs = dataObj.map(el=>slugify(el.productName, {lower: true, replacement: '-'}))
+console.log(slugs);
 const overview = fs.readFileSync(`${__dirname}/template/template__overview.html`, 'utf-8')
 const productTemplate = fs.readFileSync(`${__dirname}/template/template__product.html`, 'utf-8')
-
 const card = fs.readFileSync(`${__dirname}/template/card.html`, 'utf-8')
 
+console.log(slugify('Fresh avocados', {lower: true, replacement: '-'}))
 
 const server = http.createServer((req, res)=>{
 
