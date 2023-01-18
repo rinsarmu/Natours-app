@@ -1,6 +1,5 @@
 const fs = require('fs')
 const http = require('http')
-const path = require('path')
 const httpUrl = require('url')
 
 const port = '8000'
@@ -36,13 +35,11 @@ const replaceTemplate = (temp, element) =>{
 
 }
 const server = http.createServer((req, res)=>{
-    const url = req.url;
 
-    const {query, pathname} = httpUrl.parse(req.url, true)
-console.log(query, pathname);
-    //Routing
+const {query, pathname} = httpUrl.parse(req.url, true)
+// console.log(query, pathname);
 
-    //overview
+    //overview page
     if(pathname === '/overview' || pathname === '/'){
         res.writeHead(200, {
             'Content-Type': 'text/html'
@@ -53,7 +50,7 @@ console.log(query, pathname);
         return res.end(cardPlaceHolder)
     } 
 
-    //product
+    //product page
     else if(pathname==='/product'){
         console.log(query);
         res.writeHead(200, {
@@ -66,7 +63,7 @@ console.log(query, pathname);
         res.end(output)
     } 
 
-    //api
+    //api Page
     else if(pathname ==='/api') {
         fs.readFile(`${__dirname}/Data/packData.json`, 'utf-8', (err, data) =>{
             if(!err) {
@@ -78,32 +75,13 @@ console.log(query, pathname);
    
     } 
     
-    //not found page
+    //404 Page
     else { 
         res.writeHead(404); // to add status code
 
         res.end("404 - Not found ")
     }
 })
-
-//reading asyn data
-
-// fs.readFile('data.txt', 'utf-8', (err,data)=>{
-//     if(!err){
-//        fs.readFile(`${data}.txt`, 'utf-8', (err, data)=>{
-//         console.log(data);
-//         //writing async
-//             fs.writeFile('txt.txt', `Hello again! \n ${data} \n Date : ${Date.now().toLocaleString()}`, err=>{
-//                 if(err){
-//                     console.log(err);
-//                 }
-//             })
-//        })
-//     }
-// })
-// console.log("after reading");
-
-// console.log("after writing");
 
 server.listen(port, host, (err)=>{
     console.log("listening...");
