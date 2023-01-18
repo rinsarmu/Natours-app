@@ -4,18 +4,25 @@ const http = require('http')
 const port = '8000'
 const host = '127.0.0.1'
 
+const overview = fs.readFileSync(`${__dirname}/template/template__overview.html`, 'utf-8')
+const product = fs.readFileSync(`${__dirname}/template/template__product.html`, 'utf-8')
+
+
 const server = http.createServer((req, res)=>{
     const url = req.url;
 
     //Routing
     if(url === '/overview' || url === '/'){
-        return res.end("Overview")
+        res.writeHead(200, {
+            'Content-Type': 'text/html'
+        })
+        return res.end(overview)
     } 
     else if(url==='/product'){
         res.writeHead(200, {
             'Content-Type': 'text/html'
         })
-        return res.end("<h1> not Product </h1>");
+        return res.end(product);
     } 
     else if(url ==='/api') {
         fs.readFile(`${__dirname}/Data/packData.json`, 'utf-8', (err, data) =>{
